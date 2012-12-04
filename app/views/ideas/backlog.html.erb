@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="span4 offset2">
+    <h2 style="text-align: center;">Backlog</h2>
+    <div class="idea-list" id="idea-pending-list">
+        <% Idea.backlog.each do |idea| %>
+            <div class="idea">
+            <%= idea.summary %>
+            </div>
+        <% end %>
+      </div>
+  </div>
+  <div class="span4">
+    <h2 style="text-align: center;">Top 10</h2>
+    <div class="idea-list" id="idea-done-list">
+        <div class="idea">One idea</div>
+        <div class="idea">One idea</div>
+        <div class="idea">One idea <a href="http://google.com">link</a></div>
+    </div>
+  </div>
+</div>

@@ -44,12 +44,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="<%= root_url %>">TenIdeas</a>
+          <a class="brand" href="#">TenIdeas</a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><a href="#add-modal" data-target="#add-modal" data-toggle="modal">Add New Idea</a></li>
-              <li><a href="#bulk-modal" data-target="#bulk-modal" data-toggle="modal">Bulk Add</a></li>
-              <li><%= link_to "Backlog", backlog_ideas_url  %></li>
+              <li><%= link_to "Add New Idea", "/idea/add"  %></li>
+              <li><%= link_to "Backlog", "/idea/"  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -57,52 +56,40 @@
     </div>
 
     <div class="container">
-      <%= yield %>
+        <div class="row">
+          <div class="span4">
+            <h2 style="text-align: center;">10 Ideas</h2>
+            <div class="idea">
+                <p>This is an idea that we really need to implement</p>
+                <div style="margin-top: 20px">
+                  <small>50 hours <a class="pull-right"href="#">4 comments</a></small>
+                </div>
+            </div>
+            <div class="idea">One idea</div>
+            <div class="idea">One idea</div>
+            <div id="idea-pending-drop" class="idea-drop">Drop idea here</div>
+          </div>
+          <div class="span4">
+            <h2 style="text-align: center;">In Progress</h2>
+            <div class="idea">One idea</div>
+            <div class="idea">One idea</div>
+            <div class="idea">One idea</div>
+            <div id="idea-in-progress-drop" class="idea-drop">Drop idea here</div>
+          </div>
+          <div class="span4">
+            <h2 style="text-align: center;">Done 3</h2>
+            <div class="idea">One idea</div>
+            <div class="idea">One idea</div>
+            <div class="idea">One idea <a href="http://google.com">link</a></div>
+            <div id="idea-done-drop" class="idea-drop">Drop idea here</div>
+          </div>
+        </div>
 
       <footer>
         <p>&copy; Company 2012</p>
       </footer>
 
     </div> <!-- /container -->
-
-    <div id="add-modal" class="modal hide fade">
-      <%= form_tag ideas_url %>
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h3>Add Item</h3>
-      </div>
-      <div class="modal-body">
-          <fieldset>
-          <label>Idea</label>
-          <input type="text" name="idea[summary]" placeholder="Type your idea summary..." />
-          </fieldset>
-      </div>
-      <div class="modal-footer">
-        <a href="#" data-dismiss="modal"  class="btn">Close</a>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-      </div>
-      </form>
-    </div>
-
-    <div id="bulk-modal" class="modal hide fade">
-      <form>
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h3>Bulk Add Items</h3>
-      </div>
-      <div class="modal-body">
-          <fieldset>
-          <label>Idea</label>
-          <span class="help-block">Enter your ideas, one per line.</span>
-          <textarea rows="10"></textarea>
-          </fieldset>
-      </div>
-      <div class="modal-footer">
-        <a href="#" data-dismiss="modal"  class="btn">Close</a>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-      </div>
-      </form>
-    </div>
 
     <!-- Javascripts
     ================================================== -->

@@ -11,6 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20121204054118) do
+
+  create_table "ideas", :force => true do |t|
+    t.text     "summary",                            :null => false
+    t.integer  "position",     :default => 0,        :null => false
+    t.string   "state",        :default => "queued", :null => false
+    t.datetime "completed_at"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+  end
 
 end

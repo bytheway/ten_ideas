@@ -1,4 +1,9 @@
 TenIdeas::Application.routes.draw do
+  resources :ideas do
+    get 'backlog', :on => :collection
+  end
+
+
   root :to => 'home#index'
 
   get "home/index"

@@ -12,5 +12,30 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require twitter/bootstrap
 //= require_tree .
+
+// $('.idea').draggable({ revert: true });
+// $(".idea-drop").droppable({ 
+//    accept: ".idea", 
+//    activeClass: "idea-drop-active",
+//    hoverClass: "idea-drop-hover",
+//    drop: function(event, ui) {
+//        alert( "dropped " + event.target.id );
+//    }
+//});
+
+$("#idea-pending-list, #idea-in-progress-list, #idea-done-list").sortable({ 
+  items: "> div", 
+  connectWith: ".idea-list",
+  //receive: function(event, ui) {
+    //alert( "changed lists" + event.target.id );
+  //},
+  update: function(event, ui) {
+    if (this === ui.item.parent()[0]) {
+      alert( "sorted lists" + event.target.id + " " + ui.item.data() );
+    }
+  }
+});
+
